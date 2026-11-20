@@ -21,6 +21,7 @@ The printer has a string input for characters. The printer by default has 60 cha
 The image data encoded by the main encoder is returned in multiple text files depending on the size of your data blocks, the numbers correspond to the table numbers, and more tables can freely be added if needed.
 
 Currently the main encoder script produces both your image data and the color hex codes, although I have not, and don't intend to make a color importing system in the near future, so if you want to take that step then go right ahead. Also, it is recommended that you import your data tables in a separate room than the printer, and bring them over with an invention because of a current bug that will destroy your room permanently. if you have any other questions you can message ooflordfr on discord.
+When you receive your encoded image data files, paste them exactly as-is into the data tables without changing anything.
 
 # Setup
 Firstly, in order to be able to generate the encoded text files for images, you will need to have python installed on your computer. You can download python at "https://www.python.org/downloads/".
