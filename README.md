@@ -5,6 +5,8 @@ QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord)
 A tutorial will be made sometime very soon, but for now it's mainly for people who know how to use printers already, although if you don't want to wait you can read up on the tutorials posted on old printers like swiftprinter by faustroland and the older shirt printer by McReny
 
 # FYI
+When spawning the printer, the first thing you should do is delete the square canvas and spawn your own, as the other one can not be saved because it's part of the invention.
+
 You can generate your tables at the room ^TableGeneration by copying it, and the markers are an invention that come with the printer.
 
 If you want to know if a shirt printer is coming any time soon, yes, I am currently working on it but it will still be a little while.
