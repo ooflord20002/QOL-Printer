@@ -5,7 +5,11 @@ QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord)
 A tutorial will be made sometime very soon, but for now it's mainly for people who know how to use printers already, although if you don't want to wait you can read up on the tutorials posted on old printers like swiftprinter by faustroland and the older shirt printer by McReny
 
 # FYI
+You can generate your tables at the room ^TableGeneration by copying it, and the markers are an invention that come with the printer.
+
 If you want to know if a shirt printer is coming any time soon, yes, I am currently working on it but it will still be a little while.
+
+The printer has a string input for characters. You do not have to touch these for it to work, as the encoder and the printer match. This option is only for if you are in a room where you want, and can physically fit more markers.
 
 The image data encoded by the main encoder is returned in multiple text files depending on the size of your data blocks, the numbers correspond to the table numbers, and more tables can freely be added if needed.
 
