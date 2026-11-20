@@ -9,6 +9,8 @@ You can generate your tables at the room ^TableGeneration by copying it, and the
 
 If you want to know if a shirt printer is coming any time soon, yes, I am currently working on it but it will still be a little while.
 
+You should probably keep the transparency symbol the same, as it's actually wired to nothing, my bad.
+
 The printer has a string input for characters. You do not have to touch these for it to work, as the encoder and the printer match. This option is only for if you are in a room where you want, and can physically fit more markers.
 
 The image data encoded by the main encoder is returned in multiple text files depending on the size of your data blocks, the numbers correspond to the table numbers, and more tables can freely be added if needed.
