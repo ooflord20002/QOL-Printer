@@ -134,6 +134,7 @@ def save_encoded(data):
 
                 if i + BLOCK_SIZE < len(chunk):
                     f.write("\n")
+            f.write("\n")
 
         print(f"Saved {filename}")
 
