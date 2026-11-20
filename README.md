@@ -1,6 +1,11 @@
 # QOL-Printer
 QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord)
 
+I am aware that the published printer invention has a few issues, I will be fixing them as I go, and if you find any it'd be great if you messaged me, thanks. The issues I know of are:
+Transparency symbol not wired to anything in circuit board
+Marker #61 does not have a tag
+Invention spawns with wrong amount of symbols as the markers have
+
 # THIS PAGE IS A WORK IN PROGRESS, IT'S MAINLY FOR PEOPLE WHO KNOW WHAT THEY'RE DOING
 A tutorial will be made sometime very soon, but for now it's mainly for people who know how to use printers already, although if you don't want to wait you can read up on the tutorials posted on old printers like swiftprinter by faustroland and the older shirt printer by McReny
 
@@ -10,8 +15,6 @@ When spawning the printer, the first thing you should do is delete the square ca
 You can generate your tables at the room ^TableGeneration by copying it, and the markers are an invention that come with the printer.
 
 If you want to know if a shirt printer is coming any time soon, yes, I am currently working on it but it will still be a little while.
-
-You should probably keep the transparency symbol the same, as it's actually wired to nothing, my bad.
 
 The printer has a string input for characters. The printer by default has 60 characters inputted, but to use the full 100 you can copy the characters from the text file, or use your own. This option is only for if you are in a room where you want, and can physically fit more markers.
 
