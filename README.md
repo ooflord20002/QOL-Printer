@@ -2,9 +2,12 @@
 QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord)
 
 # THIS PAGE IS A WORK IN PROGRESS, IT'S MAINLY FOR PEOPLE WHO KNOW WHAT THEY'RE DOING
+A tutorial will be made sometime very soon, but for now it's mainly for people who know how to use printers already, although if you don't want to wait you can read up on the tutorials posted on old printers like swiftprinter by faustroland and the older shirt printer by McReny
 
 # FYI
 If you want to know if a shirt printer is coming any time soon, yes, I am currently working on it but it will still be a little while.
+
+The image data encoded by the main encoder is returned in multiple text files depending on the size of your data blocks, the numbers correspond to the table numbers, and more tables can freely be added if needed.
 
 Currently the main encoder script produces both your image data and the color hex codes, although I have not, and don't intend to make a color importing system in the near future, so if you want to take that step then go right ahead. Also, it is recommended that you import your data tables in a separate room than the printer, and bring them over with an invention because of a current bug that will destroy your room permanently. if you have any other questions you can message ooflordfr on discord.
 
