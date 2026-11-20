@@ -1,5 +1,5 @@
 # QOL-Printer
-QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord)
+QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord, ooflordfr on discord)
 
 I am aware that the published printer invention has a few issues, I will be fixing them as I go, and if you find any it'd be great if you messaged me, thanks. The issues I know of are:
 Transparency symbol not wired to anything in circuit board
