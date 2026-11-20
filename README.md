@@ -11,7 +11,7 @@ If you want to know if a shirt printer is coming any time soon, yes, I am curren
 
 You should probably keep the transparency symbol the same, as it's actually wired to nothing, my bad.
 
-The printer has a string input for characters. You do not have to touch these for it to work, as the encoder and the printer match. This option is only for if you are in a room where you want, and can physically fit more markers.
+The printer has a string input for characters. The printer by default has 60 characters inputted, but to use the full 100 you can copy the characters from the text file, or use your own. This option is only for if you are in a room where you want, and can physically fit more markers.
 
 The image data encoded by the main encoder is returned in multiple text files depending on the size of your data blocks, the numbers correspond to the table numbers, and more tables can freely be added if needed.
 
