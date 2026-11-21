@@ -2,9 +2,7 @@
 QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord, ooflordfr on discord)
 
 I am aware that the published printer invention has a few issues, I will be fixing them as I go, and if you find any it'd be great if you messaged me, thanks. The issues I know of are:
-Transparency symbol not wired to anything in circuit board,
-Marker #61 does not have a tag,
-Invention spawns with wrong amount of symbols as the markers have.
+None
 
 # THIS PAGE IS A WORK IN PROGRESS, IT'S MAINLY FOR PEOPLE WHO KNOW WHAT THEY'RE DOING
 A tutorial will be made sometime very soon, but for now it's mainly for people who know how to use printers already, although if you don't want to wait you can read up on the tutorials posted on old printers like swiftprinter by faustroland and the older shirt printer by McReny
