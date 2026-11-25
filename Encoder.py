@@ -14,7 +14,6 @@ BLOCK_SIZE = 512   # Keep this the same unless you know what you're doing
 SECTION_BLOCKS = int(input("Enter Section Blocks (140 Works the best, lower the number for lower end computers): "))
 OUTPUT_FILE = "image data.txt"
 PALETTE_FILE = "imagehex.txt"
-TRANSPARENT_SYMBOL = "⇋"
 
 SYMBOLS = list(
     "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇⒈⒉⒊⒋⒌⒍⒎⒏⒐⒑⒒⒓⒔⒕⒖⒗⒘⒙⒚⒛⒜⒝⒞⒟⒠⒡⒢⒣⒤⒥⒦⒧⒨⒩⒪⒫⒬⒭⒮⒯⒰⒱⒲⒳⒴⒵ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃ"
@@ -40,9 +39,25 @@ def rgb_to_hex(rgb):
     return "#{:02X}{:02X}{:02X}".format(*rgb)
 
 
-def generate_palette(img):
+def generate_palette(img, Method):
 
-    quantized = img.quantize(colors=COLOR_COUNT)
+    if Method == 1:
+        method = Image.Quantize.MEDIANCUT
+
+    elif Method == 2:
+        method = Image.Quantize.MAXCOVERAGE
+
+    elif Method == 3:
+        method = Image.Quantize.FASTOCTREE
+
+    else:
+        print("Invalid choice, using Median Cut.")
+        method = Image.Quantize.MEDIANCUT
+
+    quantized = img.convert("RGB").quantize(
+        colors=COLOR_COUNT,
+        method=method
+    )
 
     palette = quantized.getpalette()
     colors = quantized.getcolors()
@@ -97,43 +112,80 @@ def encode_image(img, palette):
 
             pixel = img.getpixel((x, y))
 
-            r, g, b, a = pixel
+        symbol = get_closest_symbol(
+        pixel,
+        palette,
+        SYMBOLS
+    )
 
-            # Transparency check
-            if a < 128:
-                encoded.append(TRANSPARENT_SYMBOL)
-                continue
-
-            symbol = get_closest_symbol(
-                (r, g, b),
-                palette,
-                SYMBOLS
-            )
-
-            encoded.append(symbol)
+    encoded.append(symbol)
 
     return "".join(encoded)
 
+def rle_encode(data):
+
+    if not data:
+        return ""
+
+    result = []
+
+    current = data[0]
+    count = 0
+
+    for char in data[1:]:
+
+        if char == current:
+            count += 1
+        else:
+            result.append(f"{current}{count}:")
+            current = char
+            count = 0
+
+    result.append(f"{current}{count}:")
+
+    return "".join(result)
+
 def save_encoded(data):
 
-    chars_per_file = BLOCK_SIZE * SECTION_BLOCKS
+    # Build lines first
+    lines = []
+    current_line = ""
 
+    entries = data.split(":")
+
+    for entry in entries:
+
+        if not entry:
+            continue
+
+        token = entry + ":"
+
+        if len(current_line) + len(token) > BLOCK_SIZE:
+
+            lines.append(current_line)
+            current_line = token
+
+        else:
+            current_line += token
+
+    if current_line:
+        lines.append(current_line)
+
+    # Split lines into files
     file_number = 0
 
-    for start in range(0, len(data), chars_per_file):
-
-        chunk = data[start:start + chars_per_file]
+    for start in range(0, len(lines), SECTION_BLOCKS):
 
         filename = f"image{file_number:02d}.txt"
 
         with open(filename, "w", encoding="utf-8") as f:
 
-            for i in range(0, len(chunk), BLOCK_SIZE):
+            chunk = lines[start:start + SECTION_BLOCKS]
 
-                f.write(chunk[i:i + BLOCK_SIZE])
+            for line in chunk:
+                f.write(line + "\n")
 
-                if i + BLOCK_SIZE < len(chunk):
-                    f.write("\n")
+            # blank final line
             f.write("\n")
 
         print(f"Saved {filename}")
@@ -183,12 +235,19 @@ def main():
     print("Loading image...")
 
     img = Image.open(imagepath)
-    img = img.convert("RGBA")
+    img = img.convert("RGB")
     img = img.resize((WIDTH, HEIGHT))
 
     print(f"Generating {COLOR_COUNT} colors...")
 
-    palette = generate_palette(img)
+    print("\nPalette Generation Method:")
+    print("1 - Median Cut (Default)")
+    print("2 - Max Coverage")
+    print("3 - Fast Octree (best-ish)")
+
+    Method = int(input("Choose method (1-3): "))
+
+    palette = generate_palette(img, Method)
 
     print("Generating preview...")
     create_preview(img, palette)
@@ -199,6 +258,9 @@ def main():
     print("Encoding image...")
 
     encoded = encode_image(img, palette)
+
+    print("Compressing...")
+    encoded = rle_encode(encoded)
 
     print("Saving image data...")
     save_encoded(encoded)
