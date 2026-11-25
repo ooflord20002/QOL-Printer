@@ -112,13 +112,13 @@ def encode_image(img, palette):
 
             pixel = img.getpixel((x, y))
 
-        symbol = get_closest_symbol(
-        pixel,
-        palette,
-        SYMBOLS
-    )
+            symbol = get_closest_symbol(
+                pixel,
+                palette,
+                SYMBOLS
+            )
 
-    encoded.append(symbol)
+            encoded.append(symbol)
 
     return "".join(encoded)
 
