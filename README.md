@@ -1,6 +1,9 @@
 # QOL-Printer
 QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord, ooflordfr on discord)
 
+# BIG CHANGES!!!
+Please respawn the printer invention, and download the new script, as the printer now uses 60% less data, and prints 3x as fast, while still being as high quality as possible!
+
 I am aware that the published printer invention has a few issues, I will be fixing them as I go, and if you find any it'd be great if you messaged me, thanks. The issues I know of are:
 None
 
