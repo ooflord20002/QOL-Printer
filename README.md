@@ -1,3 +1,6 @@
+# Slop Tutorial
+[![Watch the video](https://img.youtube.com/vi/0TGe4h1hVQE/0.jpg)](https://www.youtube.com/watch?v=0TGe4h1hVQE)
+
 # QOL-Printer
 QOL Marker printer for the recroom revival MeowNet, made by me (@ooflord, ooflordfr on discord)
 
